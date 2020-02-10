@@ -1,0 +1,42 @@
+body {
+    background: whitesmoke;
+    font-family: 'PT Sans', "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+
+    #app {
+        text-align: center;
+
+        h1 {
+            color: #86af49;
+        }
+
+        .title-first-letter {
+            font-size: 50px;
+        }
+
+        .slider {
+            display: flex;
+            border: 2px solid red;
+            position: relative;
+            overflow: hidden;
+            background-color: #fdfdfd;
+            width: 100%;
+
+            background: green;
+
+            .slider-content {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                position: relative;
+                box-sizing: border-box;
+
+                #slider-images img {
+                    // display: none;
+                    // flex-direction: row;
+                    width:  100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}

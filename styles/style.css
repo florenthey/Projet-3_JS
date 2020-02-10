@@ -1,0 +1,37 @@
+body {
+  background: whitesmoke;
+  font-family: "PT Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+body #app {
+  text-align: center;
+}
+body #app h1 {
+  color: #86af49;
+}
+body #app .title-first-letter {
+  font-size: 50px;
+}
+body #app .slider {
+  display: flex;
+  border: 2px solid red;
+  position: relative;
+  overflow: hidden;
+  background-color: #fdfdfd;
+  width: 100%;
+  background: green;
+}
+body #app .slider .slider-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+}
+body #app .slider .slider-content #slider-images img {
+  display: none;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=style.css.map */
