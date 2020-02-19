@@ -2,6 +2,7 @@ class Slider {
 
     constructor(slider, delay) {
         this.currentSlide = 0; // counter qui permet d'accrémenter la valeur de l'index voulu du tableau
+        this.delay = delay;
 
         this.btnNext = document.getElementById("button-next"); // passer à la slide suivante
         this.btnPrev = document.getElementById("button-prev"); // passer à la slide précédente
@@ -17,32 +18,44 @@ class Slider {
         this.btnPause.addEventListener("click", () => this.pauseInterval());
         this.btnPlay.addEventListener("click", () => this.playInterval());
 
-        this.delay = window.setInterval(() => this.nextSlide(), delay);
-
-        this.pressKey();  // execute la fonction associée à la touche clavier correspondante
-        this.display();   // affiche le slide en court;
-        // this.btnPlay.style.display = "none";
+        this.player = this.setPlayer();
+        this.pressKey();
+        this.display();
     }
 
+    // défilement automatique des slides
+    setPlayer() {
+        return window.setInterval(() => this.nextSlide(), this.delay);
+    }
+
+    // execute la fonction associée à la touche clavier correspondante
     pressKey() {
         document.onkeydown = () => {
-            switch (window.event.keyCode) {
+            switch (window.event.keyCode) { 
                 case 40:
                     this.prevSlide()
-                break;
+                    break;
                 case 38:
                     this.nextSlide() 
-                break;
+                    break;
             }
         };
     }
 
     pauseInterval() {
-            clearInterval(this.delay);
-            this.btnPause.style.display = "none";  
-            this.btnPlay.style.display = "flex";
+        clearInterval(this.player);
+        this.btnPlay.style.display = "flex";
+        this.btnPause.style.display = "none";
     }
 
+    playInterval() {
+        clearInterval(undefined);
+        this.btnPlay.style.display = "none";
+        this.btnPause.style.display = "flex";
+        this.player = this.setPlayer;
+    }
+
+    // affiche le slide en court;
     display() { 
         // selectionne tout les slides qui ne sont pas la slide courante
         $(this.slidesArray)
@@ -51,7 +64,6 @@ class Slider {
         ; 
         // la slide courante
         this.slidesArray[this.currentSlide].style.display = "flex";
-        console.log("this.currentSlide", this.currentSlide);
     }
 
     // passe à la slide suivante
@@ -62,9 +74,7 @@ class Slider {
 
     // passe à la slide précédente
     prevSlide() {
-        console.log("length", this.slidesArray.length);
-        this.currentSlide <= 0 ? this.currentSlide = this.slidesArray.length -1 : this.currentSlide--;
-        // this.currentSlide = this.currentSlide = 0 ? this.slidesArray.length : this.currentSlide-- ;
+        this.currentSlide <= 0 ? this.currentSlide = this.slidesArray.length - 1 : this.currentSlide--;
         this.display();
     }
 }

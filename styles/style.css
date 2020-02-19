@@ -3,6 +3,8 @@ body {
   font-family: "PT Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 body #app {
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
 body #app h1 {
@@ -11,27 +13,43 @@ body #app h1 {
 body #app .title-first-letter {
   font-size: 50px;
 }
-body #app .slider {
+body #app .slider-container {
   display: flex;
+  flex-direction: column;
+  align-content: center;
   border: 2px solid red;
   position: relative;
   overflow: hidden;
   background-color: #fdfdfd;
-  width: 100%;
+  max-width: 596px;
   background: green;
+  margin: 5px;
 }
-body #app .slider .slider-content {
+body #app .slider-container .slider-content {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  align-items: center;
+  max-width: 100%;
   position: relative;
   box-sizing: border-box;
 }
-body #app .slider .slider-content #slider-images img {
-  display: none;
+body #app .slider-container .slider-content .slider-controllers {
+  display: flex;
   flex-direction: row;
+}
+body #app .slider-container .slider-content .slider-controllers #button-play {
+  display: none;
+}
+body #app .slider-container .slider-content #slider-images img {
   width: 100%;
   height: auto;
+}
+body #app #map-container {
+  margin: 5px;
+}
+body #app #map-container #map {
+  height: 400px;
+  width: 100%;
 }
 
 /*# sourceMappingURL=style.css.map */

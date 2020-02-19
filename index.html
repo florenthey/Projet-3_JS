@@ -6,14 +6,19 @@
             <meta name="description" content="Site web de réservations de vélos"/>
             <link rel="stylesheet" href="./styles/style.css"/>
             <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet"> 
+            <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
             <title>V' Lovers</title>
+            
         </head>
 
         <body>
 
             <div id="app">
                 <h1><span class="title-first-letter">V'</span>LOVER</h1>
-                <div class="slider">
+
+                <div class="slider-container">
                     <div class="slider-content">
                         <div id="slider-images">
                             <img src="assets/img-01.jpg" />
@@ -28,6 +33,11 @@
                         </div>
                     </div>
                 </div>
+
+                <div id="map-container">
+                    <div id="map"></div>
+                </div>
+
             </div>
 
             <script src="https://kit.fontawesome.com/ddbc09097b.js"></script>
@@ -35,7 +45,11 @@
 			  src="https://code.jquery.com/jquery-3.4.1.js"
 			  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
               crossorigin="anonymous"></script>
+              <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+              integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+              crossorigin=""></script>
             <script src="components/slider.js"></script>
+            <script src="components/map.js"></script>
             <script src="components/main.js"></script>
         </body>
     
