@@ -57,7 +57,7 @@ class BikeMap {
             L.marker(
                 [station.position.lat, station.position.lng],
                 {icon: markerIcon})
-                .bindPopup(station.name)
+                .bindPopup(station.name.replace(/^(.*?)\-/, "STATION "))
                 .openPopup()
                 .on('click', e => this.onClickMarker(station))
                 .addTo(this.map)
@@ -80,5 +80,7 @@ class BikeMap {
     onClickMarker(station) {
         let stationModel = new Station(station);
         stationModel.display();
+        
+        new Booking("form-booking");
     }
 }

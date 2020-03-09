@@ -36,14 +36,29 @@
                 </div>
 
                 <div id="map-container">
+
                     <div id="map"></div>
-                    <div id="booking">
-                        <p id="station-name"></p>
-                        <p id="station-status"></p>
-                        <p id="station-address"></p>
-                        <p id="station-bikes"></p>
-                        <p id="station-stands"></p>
+
+                    <div id="booking-container">
+
+                        <div id="booking">  
+                            <p id="station-name"></p>
+                            <p id="station-status"></p>
+                            <p id="station-address"></p>
+                            <p id="station-bikes"></p>
+                            <p id="station-stands"></p>
+                        </div>
+
+                        <form method="post" id="form-booking">
+                            <label for="lastname">Nom de famille: </label><input type="text" name="lastname" id="lastName" required><br>
+                            <label for="firstname">Prénom: </label><input type="text" name="firstname" id="firstName" required><br>
+                            <input type="button" id="form-submit" value="Réservez">
+                        </form>
+
+                        <p id="booking-message"></p>
+
                     </div>
+
                 </div>
 
             </div>
@@ -60,6 +75,7 @@
             <script src="components/environment.js"></script>
             <script src="components/station.js"></script>
             <script src="components/bikeMap.js"></script>
+            <script src="components/booking.js"></script>
             <script src="components/main.js"></script>
         </body>
     
