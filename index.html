@@ -10,6 +10,7 @@
             <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
    crossorigin=""/>
+            <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2&display=swap" rel="stylesheet">
             <title>V' Lovers</title>
             
         </head>
@@ -17,7 +18,11 @@
         <body>
 
             <div id="app">
-                <h1><span class="title-first-letter">V'</span>LOVER</h1>
+
+                <header>
+                    <img src="assets/logo.png" class="logo"/>
+                    <h2>Réservez votre vélo en toute facilité</h2>
+                </header>
 
                 <div class="slider-container">
                     <div class="slider-content">
@@ -50,9 +55,13 @@
                         </div>
 
                         <form method="post" id="form-booking">
-                            <label for="lastname">Nom de famille: </label><input type="text" name="lastname" id="lastName" required><br>
-                            <label for="firstname">Prénom: </label><input type="text" name="firstname" id="firstName" required><br>
-                            <input type="button" id="form-submit" value="Réservez">
+                            <label for="lastname">Nom de famille: </label><input type="text" name="lastname" id="lastName" pattern="[a-zA-Z]{2,30}" title="pas de chiffres ou de caractères spéciaux" required ><br>
+                            <p id="lastname-error">Veuillez respecter le format requis: pas de chiffres ou de caractères spéciaux.</p>
+                            <label for="firstname">Prénom: </label><input type="text" name="firstname" id="firstName" pattern="[a-zA-Z]{2,30}" title="pas de chiffres ou de caractères spéciaux"required ><br>
+                            <p id="firstname-error">Veuillez respecter le format requis: pas de chiffres ou de caractères spéciaux.</p>
+                            <p>Veuillez signer ici:</p>
+                            <canvas id="signature"></canvas>
+                            <button type="button" id="form-submit">Réservez</button>
                         </form>
 
                         <p id="booking-message"></p>
@@ -76,6 +85,8 @@
             <script src="components/station.js"></script>
             <script src="components/bikeMap.js"></script>
             <script src="components/booking.js"></script>
+            <script src="components/timer.js"></script>
+            <script src="components/canvas.js"></script>
             <script src="components/main.js"></script>
         </body>
     

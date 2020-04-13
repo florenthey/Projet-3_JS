@@ -2,7 +2,7 @@ body {
   padding: 0;
   margin: 0;
   background: whitesmoke;
-  font-family: "PT Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "Baloo Paaji 2", cursive, "PT Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 @media screen and (max-width: 600px) {
   body #map-container {
@@ -26,7 +26,33 @@ body #app {
   width: 100%;
 }
 body #app h1 {
-  color: #86af49;
+  color: #6c8d3a;
+}
+body #app h2 {
+  color: #8b4230;
+}
+body #app p {
+  font-size: 1em;
+}
+body #app input {
+  background: orange;
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+body #app header {
+  width: 100%;
+  height: auto;
+  background: orange;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+body #app header .logo {
+  width: 40%;
 }
 body #app .title-first-letter {
   font-size: 50px;
@@ -35,12 +61,11 @@ body #app .slider-container {
   display: flex;
   flex-direction: column;
   align-content: center;
-  border: 2px solid red;
   position: relative;
   overflow: hidden;
   background-color: #fdfdfd;
   max-width: 596px;
-  background: green;
+  background: grey;
   margin: 5px;
 }
 body #app .slider-container .slider-content {
@@ -70,19 +95,46 @@ body #app #map-container {
 body #app #map-container #map {
   box-sizing: border-box;
   width: 50%;
-  height: 400px;
+  height: 850px;
 }
 body #app #map-container #booking-container {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  height: 400px;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 100%;
+  height: 850px;
+  background: #8b4230;
 }
 body #app #map-container #booking-container #form-booking {
   display: none;
   flex-direction: column;
-  align-items: flex-start;
-  margin-left: 20px;
+  align-items: center;
+}
+body #app #map-container #booking-container #booking {
+  background: orange;
+}
+body #app #map-container #booking-container #booking-message {
+  display: flex;
+  margin: 10px;
+  background: #d16348;
+}
+body #app #map-container #booking-container #form-submit {
+  display: none;
+}
+body #app #map-container #booking-container #lastname-error {
+  display: none;
+  background: #d16348;
+}
+body #app #map-container #booking-container #firstname-error {
+  display: none;
+  background: #d16348;
+}
+body #app #map-container #booking-container #signature {
+  background-color: orange;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 10px 0 10px 0;
 }
 
 /*# sourceMappingURL=style.css.map */

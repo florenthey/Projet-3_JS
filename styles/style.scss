@@ -2,7 +2,7 @@ body {
     padding: 0;
     margin: 0;
     background: whitesmoke;
-    font-family: 'PT Sans', "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: 'Baloo Paaji 2', cursive, "PT Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 
     @media screen and (max-width: 600px) {
         #map-container {
@@ -26,10 +26,42 @@ body {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        width: 100%;
+        width: 100%; 
+
         h1 {
-            color: #86af49;
+            color: #6c8d3a;
         }
+
+        h2 {
+            color: #8b4230;
+        }
+
+        p {
+            font-size: 1em;
+        }
+
+        input {
+            background: orange;
+            width: 90%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+            header {
+                width: 100%;
+                height: auto;
+                background: orange;
+                overflow: hidden;
+                box-sizing: border-box;
+
+                .logo {
+                    width: 40%;
+                }
+            }
 
         .title-first-letter {
             font-size: 50px;
@@ -39,12 +71,11 @@ body {
             display: flex;
             flex-direction: column;
             align-content: center;
-            border: 2px solid red;
             position: relative;
             overflow: hidden;
             background-color: #fdfdfd;
             max-width: 596px;
-            background: green;
+            background: grey;
             margin: 5px;
 
             .slider-content {
@@ -79,24 +110,53 @@ body {
             #map {
                 box-sizing: border-box;
                 width: 50%;
-                height: 400px;
+                height: 850px;
             }
 
             #booking-container {
                 display: flex;
                 flex-direction: column;
-                width: 50%;
-                height: 400px;
+                box-sizing: border-box;
+                overflow: hidden;
+                width: 100%;
+                height: 850px;
+                background: #8b4230;
 
                 #form-booking {
                     display: none;
                     flex-direction: column;
-                    align-items: flex-start;
-                    margin-left: 20px;
+                    align-items: center;
+                }
+
+                #booking {
+                    background:  orange;
                 }
 
                 #booking-message {
-                    // display: none;
+                    display: flex;
+                    margin: 10px;
+                    background: #d16348;
+                }
+
+                #form-submit {
+                    display: none;
+                }
+
+                #lastname-error {
+                    display: none;
+                    background: #d16348;
+                }
+
+                #firstname-error {
+                    display: none;
+                    background: #d16348;
+                }
+
+                #signature {
+                    background-color: orange;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                    margin: 10px 0 10px 0;
                 }
             }
         }
