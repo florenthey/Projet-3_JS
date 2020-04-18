@@ -54,12 +54,19 @@
                             <p id="station-stands"></p>
                         </div>
 
+                        <div id="map-legend">
+                            <p>Pour réserver un vélo, séléctionnez une station sur la carte:</p>
+                            <p><img class="green" src="assets/marker-icon-2x-green.png"> Les stations disposant de nombreux vélos</p>
+                            <p><img class="orange" src="assets/marker-icon-2x-orange.png"> Les stations disposant peu de vélos</p>
+                            <p><img class="red" src="assets/marker-icon-2x-red.png"> Les stations fermées ou ne disposant plus de vélos</p>
+                        </div>
+
                         <form method="post" id="form-booking">
                             <label for="lastname">Nom de famille: </label><input type="text" name="lastname" id="lastName" pattern="[a-zA-Z]{2,30}" title="pas de chiffres ou de caractères spéciaux" required ><br>
                             <p id="lastname-error">Veuillez respecter le format requis: pas de chiffres ou de caractères spéciaux.</p>
                             <label for="firstname">Prénom: </label><input type="text" name="firstname" id="firstName" pattern="[a-zA-Z]{2,30}" title="pas de chiffres ou de caractères spéciaux"required ><br>
                             <p id="firstname-error">Veuillez respecter le format requis: pas de chiffres ou de caractères spéciaux.</p>
-                            <p>Veuillez signer ici:</p>
+                            <label for="signature">Veuillez signer ici:</label>
                             <canvas id="signature"></canvas>
                             <button type="button" id="form-submit">Réservez</button>
                         </form>

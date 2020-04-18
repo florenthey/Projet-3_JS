@@ -1,6 +1,7 @@
 class Booking {
     constructor() {
         document.getElementById("form-booking").style.display = "flex";
+        document.getElementById("map-legend").style.display = "none";
         document.getElementById("form-submit").addEventListener("click", () => this.create());
         new Canvas();
 
@@ -21,7 +22,6 @@ class Booking {
             return false;
         }
     }
-
 
     // récupère les valeurs de l'utilisateur et les stock dans localStorage et sessionStorage
     setDataStorage() {

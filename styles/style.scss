@@ -26,7 +26,7 @@ body {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        width: 100%; 
+        width: 100%;
 
         h1 {
             color: #6c8d3a;
@@ -49,6 +49,7 @@ body {
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
+            font-size:1em;
         }
 
             header {
@@ -92,6 +93,22 @@ body {
 
                     #button-play {
                         display: none;
+                        padding: 15px 32px;
+                        text-align: center;
+                        text-decoration: none;
+                        border: none;
+                        background: orange;
+                        color: #8b4230; 
+                    }
+
+                    #button-prev, #button-pause, #button-next {
+                        padding: 15px 32px;
+                        text-align: center;
+                        text-decoration: none;
+                        border: none;
+                        display: inline-block;
+                        background: orange;
+                        color: #8b4230; 
                     }
                 }
 
@@ -109,8 +126,8 @@ body {
             
             #map {
                 box-sizing: border-box;
-                width: 50%;
-                height: 850px;
+                width: 100%;
+                height: 1250px;
             }
 
             #booking-container {
@@ -119,45 +136,76 @@ body {
                 box-sizing: border-box;
                 overflow: hidden;
                 width: 100%;
-                height: 850px;
+                height: 1250px;
                 background: #8b4230;
+
+                #booking {
+                    background:  orange;
+                }
+
+                #booking p {
+                    font-size: 1.4em;
+                    font-weight: 800;
+                }
+
+                #map-legend {
+                    font-size: 20px;
+                    margin: 50px;
+                    color: black;
+                    text-align: left;
+                }
+
+                .green, .orange, .red {
+                    width: 30px;
+                }
+
+                #form-booking label {
+                   font-size: 20px;
+                   color: whitesmoke;
+                }
 
                 #form-booking {
                     display: none;
                     flex-direction: column;
                     align-items: center;
-                }
 
-                #booking {
-                    background:  orange;
+                    #lastname-error {
+                        display: none;
+                        background: #d16348;
+                    }
+    
+                    #firstname-error {
+                        display: none;
+                        background: #d16348;
+                    }
+    
+                    #signature {
+                        background-color: orange;
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                        margin: 10px 0 10px 0;
+                    }
+
+                    #form-submit {
+                        display: none;
+                        padding: 15px 32px;
+                        text-align: center;
+                        text-decoration: none;
+                        border: none;
+                        background: orange;
+                        color: #8b4230; 
+                        font-size: 1em;
+                    }
                 }
 
                 #booking-message {
                     display: flex;
                     margin: 10px;
                     background: #d16348;
+                    font-size: 1.2em;
+                    font-weight: 800;
                 }
 
-                #form-submit {
-                    display: none;
-                }
-
-                #lastname-error {
-                    display: none;
-                    background: #d16348;
-                }
-
-                #firstname-error {
-                    display: none;
-                    background: #d16348;
-                }
-
-                #signature {
-                    background-color: orange;
-                    border: 1px solid #ccc;
-                    border-radius: 4px;
-                    margin: 10px 0 10px 0;
-                }
             }
         }
     }

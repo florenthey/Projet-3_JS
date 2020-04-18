@@ -1,6 +1,7 @@
 class Station {
     constructor(station) {
         Object.assign(this, station); // affecte les propriétés de l'objet station à la classe
+
     }
 
     display() {
