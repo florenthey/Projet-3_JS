@@ -35,6 +35,7 @@ class Booking {
         }
     }
 
+    // Envois les données au storage et lance le décompte de la réservation
     create() {
         if(this.checkInputs()) {
             sessionStorage.removeItem("bookingFinish");
@@ -51,24 +52,16 @@ class Booking {
         const lastName = document.getElementById("lastName").value;
         const firstResult = regex.test(firstName);
         const lastResult = regex.test(lastName);
-        const lastDisplay = document.getElementById("lastname-error").style.display = "flex";
-        const firstDisplay = document.getElementById("firstname-error").style.display = "flex";
 
+        document.getElementById("lastname-error").style.display = "none";
+        document.getElementById("firstname-error").style.display = "none";
         if(lastResult === false) {
-            lastDisplay;
+            document.getElementById("lastname-error").style.display = "flex";
         }
         if(firstResult === false) {
-            firstDisplay;
+            document.getElementById("firstname-error").style.display = "flex";
         } 
-        if(lastResult === true && lastDisplay) {
-            document.getElementById("lastname-error").style.display = "none";
-        } 
-        if(firstResult === true && firstDisplay) {
-            document.getElementById("firstname-error").style.display = "none";
-        } 
-        if (lastResult === true && firstResult === true){
             return firstResult && lastResult;
-        }
     }
 
     // initialise le store

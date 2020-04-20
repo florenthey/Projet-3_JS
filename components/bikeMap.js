@@ -80,7 +80,13 @@ class BikeMap {
     onClickMarker(station) {
         let stationModel = new Station(station);
         stationModel.display();
-        
-        new Booking("form-booking");
+
+        if(station.status === "CLOSED" || station.available_bikes === 0) {
+            document.getElementById("form-booking").style.display = "none";
+            document.getElementById("booking-closed").style.display = "flex";
+        } else {
+            document.getElementById("booking-closed").style.display = "none";
+            new Booking("form-booking");
+        }
     }
 }

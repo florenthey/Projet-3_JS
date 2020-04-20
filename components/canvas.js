@@ -35,7 +35,7 @@ class Canvas {
      
         this.painting = true;
         this.draw(e);
-    }
+    }   
 
     startTouch(e) {
         e.preventDefault(); // évite le scroll accompagnent le déplacement de la souris
