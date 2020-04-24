@@ -128,7 +128,7 @@ body {
             #map {
                 box-sizing: border-box;
                 width: 100%;
-                height: 900px;
+                height: 1250px;
             }
 
             #booking-container {
@@ -137,7 +137,7 @@ body {
                 box-sizing: border-box;
                 overflow: hidden;
                 width: 100%;
-                height: 900px;
+                height: 1250px;
                 background: #8b4230;
 
                 #booking {
@@ -155,6 +155,11 @@ body {
                     margin: 50px;
                     color: black;
                     text-align: left;
+
+                    .legend {
+                        color: orange;
+                        font-size: 25px;
+                    }
                 }
 
                 .green, .orange, .red {

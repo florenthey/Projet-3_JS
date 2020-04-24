@@ -32,22 +32,24 @@ class Slider {
     pressKey() {
         document.onkeydown = () => {
             switch (window.event.keyCode) { 
-                case 40:
+                case 37:
                     this.prevSlide()
                     break;
-                case 38:
+                case 39:
                     this.nextSlide() 
                     break;
             }
         };
     }
 
+    // met sur pause le slider automatique
     pauseInterval() {
         clearInterval(this.player);
         this.btnPlay.style.display = "flex";
         this.btnPause.style.display = "none";
     }
 
+    // met sur play le slider automatique
     playInterval() {
         clearInterval(undefined);
         this.btnPlay.style.display = "none";

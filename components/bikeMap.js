@@ -11,6 +11,7 @@ class BikeMap {
         this.getBikeData();
     }
 
+    // définis la ville voulue par ses coordonnées
     setCity(city) {
         switch(city) {
             case "Nantes":
@@ -20,7 +21,8 @@ class BikeMap {
                 break;
         }
     }
-    
+
+    // définis les caractéristiques de la carte
     setMapLayer() {
         L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=' + this.environment.tokenMap, {
             attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -29,9 +31,11 @@ class BikeMap {
             tileSize: 512,
             zoomOffset: -1,
             accessToken: this.environment.tokenMap,
+            dragging: false,
         }).addTo(this.map);
     }
 
+    // récupère les données de l'API JCDecaux
     getBikeData() {
         fetch(this.bikeURL)
             .then(response => response.json())
@@ -39,6 +43,7 @@ class BikeMap {
             .catch(error => alert("Désolé, une erreur est survenue! " + "( " + error + ")"))
     }
 
+    // définis les caractéristiques des marqueurs
     getMarkerIcon(color) {
         return new L.Icon({
             iconUrl: 'assets/marker-icon-2x-' + color + '.png',
@@ -50,6 +55,7 @@ class BikeMap {
         });
     }
 
+    // déplois les marqueurs sur la carte
     setMarkers(stations) {
         stations.map(station => {
             let markerIcon = this.setMarkerIcon(station);
@@ -64,6 +70,7 @@ class BikeMap {
         });
     }
 
+    // définis la couleur des marqueurs selon le nombre de vélos disponibles
     setMarkerIcon(station) { 
         let stands = Math.round(station.available_bikes / station.bike_stands * 100); // proportion vélo = nombre de vélos dispo divisé par nombre de vélos total
         
@@ -77,6 +84,7 @@ class BikeMap {
         return markerIcon;
     }
 
+    // affichage lors du clique sur le marqueur
     onClickMarker(station) {
         let stationModel = new Station(station);
         stationModel.display();

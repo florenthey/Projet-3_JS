@@ -29,6 +29,7 @@ class Canvas {
         this.canvas.height = 100;
     }
     
+    // début du dessin au clique
     startClick(e) {
         this.startX = e.clientX - this.canvas.getBoundingClientRect().left;
         this.startY = e.clientY - this.canvas.getBoundingClientRect().top;
@@ -37,6 +38,7 @@ class Canvas {
         this.draw(e);
     }   
 
+    // début du dessin au touché (smartphone)
     startTouch(e) {
         e.preventDefault(); // évite le scroll accompagnent le déplacement de la souris
         this.startX = e.touches[0].clientX - this.canvas.getBoundingClientRect().left;
@@ -74,6 +76,7 @@ class Canvas {
         }
     }
 
+    // si canvas valide, affiche le bouton de validation
     displayButton() {
         document.getElementById("form-submit").style.display = "flex";
     }

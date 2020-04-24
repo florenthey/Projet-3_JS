@@ -9,11 +9,13 @@ class Timer {
         this.interval();
     }
 
+    // initialise les données de temps pour le décompte
     initCountdown() {
         this.start = new Date().getTime();
         this.finish = this.start + this.sequence;
     }
 
+    // affiche le décompte
     display() {
         let distance = sessionStorage.bookingFinish - new Date().getTime();
         
@@ -28,10 +30,12 @@ class Timer {
         }
     }
 
+    // supprime le décompte
     clear() {
         clearInterval(this.countdown);
     }
 
+    // stocke le décompte dans le storage
     setStorage() {
         sessionStorage.setItem("bookingFinish", this.finish);
     }

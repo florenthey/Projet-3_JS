@@ -112,7 +112,7 @@ body #app #map-container {
 body #app #map-container #map {
   box-sizing: border-box;
   width: 100%;
-  height: 900px;
+  height: 1250px;
 }
 body #app #map-container #booking-container {
   display: flex;
@@ -120,7 +120,7 @@ body #app #map-container #booking-container {
   box-sizing: border-box;
   overflow: hidden;
   width: 100%;
-  height: 900px;
+  height: 1250px;
   background: #8b4230;
 }
 body #app #map-container #booking-container #booking {
@@ -136,6 +136,10 @@ body #app #map-container #booking-container #map-legend {
   margin: 50px;
   color: black;
   text-align: left;
+}
+body #app #map-container #booking-container #map-legend .legend {
+  color: orange;
+  font-size: 25px;
 }
 body #app #map-container #booking-container .green, body #app #map-container #booking-container .orange, body #app #map-container #booking-container .red {
   width: 30px;
