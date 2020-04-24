@@ -24,12 +24,13 @@ class Canvas {
         this.painting = false;
     }   
 
+    // si redimensionnement de la fenêtre du navigateur, positionnement du canvas reinitialisé par rapport au viewport.
     resize() {
         this.canvas.width = 250;
         this.canvas.height = 100;
     }
     
-    // début du dessin au clique
+    // point de début du tracé au clique par rapport à sa position sur le viewport
     startClick(e) {
         this.startX = e.clientX - this.canvas.getBoundingClientRect().left;
         this.startY = e.clientY - this.canvas.getBoundingClientRect().top;
@@ -38,9 +39,9 @@ class Canvas {
         this.draw(e);
     }   
 
-    // début du dessin au touché (smartphone)
+    // point de début du tracé au touché (smartphone) par rapport à sa position sur le viewport
     startTouch(e) {
-        e.preventDefault(); // évite le scroll accompagnent le déplacement de la souris
+        e.preventDefault(); // évite le scroll accompagnent le déplacement de la souris (annule le comportement de base)
         this.startX = e.touches[0].clientX - this.canvas.getBoundingClientRect().left;
         this.startY = e.touches[0].clientY - this.canvas.getBoundingClientRect().top;
 
@@ -48,23 +49,26 @@ class Canvas {
         this.draw(e);
     }
 
+    // point de fin du tracé lors du relâchement du click ou du touché
     finishLine() {
         this.painting = false;
     }
 
+    // initialisation des fonctions de tracés
     draw(e) {   
+        // point de fin du tracé par rapport à sa position sur le viewport
         this.endX = e.clientX - this.canvas.getBoundingClientRect().left || e.touches[0].clientX - this.canvas.getBoundingClientRect().left;
         this.endY = e.clientY - this.canvas.getBoundingClientRect().top || e.touches[0].clientY - this.canvas.getBoundingClientRect().top;
 
         if(this.painting) {
             this.ctx.lineWidth = 6;
             this.ctx.lineCap = "round";
-            this.ctx.beginPath(); // créer un nouveau chemin
-            this.ctx.moveTo(this.startX, this.startY); // point de départ de la nouvelle ligne
-            this.ctx.lineTo(this.endX, this.endY); 
-            this.ctx.closePath();
-            this.ctx.stroke();
+            this.ctx.beginPath(); // initialise un nouveau tracé
+            this.ctx.moveTo(this.startX, this.startY); // l'endroit où commence le tracé
+            this.ctx.lineTo(this.endX, this.endY);  // le point suivant du tracé
+            this.ctx.stroke(); // ferme la forme
 
+            // Le point de départ du nouveau tracé est le point d'arrivé du tracé précédent
             this.startX = this.endX;
             this.startY = this.endY;
 

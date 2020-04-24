@@ -9,7 +9,7 @@ class Timer {
         this.interval();
     }
 
-    // initialise les données de temps pour le décompte
+    // initialise les données de temps (start = date et heure lors de la validation de la réservation) et (finish = start + 20mn)
     initCountdown() {
         this.start = new Date().getTime();
         this.finish = this.start + this.sequence;
@@ -30,16 +30,17 @@ class Timer {
         }
     }
 
-    // supprime le décompte
+    // supprime l'interval
     clear() {
         clearInterval(this.countdown);
     }
 
-    // stocke le décompte dans le storage
+    // stocke date et heure lors de la validation de la réservation + la séquence (20mn)
     setStorage() {
         sessionStorage.setItem("bookingFinish", this.finish);
     }
 
+    // rappel la fonction d'affichage toute les secondes
     interval() {
         this.countdown = setInterval(() => this.display(), 1000)
     }
