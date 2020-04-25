@@ -51,10 +51,9 @@ class Slider {
 
     // met sur play le slider automatique
     playInterval() {
-        clearInterval(undefined);
         this.btnPlay.style.display = "none";
         this.btnPause.style.display = "flex";
-        this.player = this.setPlayer;
+        this.player = this.setPlayer();
     }
 
     // affiche le slide en court;
