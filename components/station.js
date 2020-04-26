@@ -23,10 +23,10 @@ class Station {
         document.getElementById("station-name").style.fontSize ="40px";
 
         if(document.getElementById("station-status").innerHTML = "Station fermée") {
-            document.getElementById("station-status").style.color = "red";
+            document.getElementById("station-status").style.color = "#ca2437";
         }
         if (document.getElementById("station-status").innerHTML = "Station ouverte") {
-            document.getElementById("station-status").style.color = "green";
+            document.getElementById("station-status").style.color = "#5f8637";
         }
     }
 }
