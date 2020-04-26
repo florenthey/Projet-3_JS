@@ -57,9 +57,9 @@ crossorigin=""/>
                     <p id="booking-closed">Réservation impossible, aucun vélo disponible à cette station.</p>
                     <form method="post" id="form-booking">
                         <label for="lastname">Nom de famille: </label><input type="text" name="lastname" id="lastName" pattern="[a-zA-Z]{2,30}" title="pas de chiffres ou de caractères spéciaux" required ><br>
-                        <p id="lastname-error">Veuillez respecter le format requis: pas de chiffres ou de caractères spéciaux.</p>
+                        <p id="lastname-error">Veuillez respecter le format requis: pas de chiffres ou de caractères spéciaux ni de champ vide.</p>
                         <label for="firstname">Prénom: </label><input type="text" name="firstname" id="firstName" pattern="[a-zA-Z]{2,30}" title="pas de chiffres ou de caractères spéciaux"required ><br>
-                        <p id="firstname-error">Veuillez respecter le format requis: pas de chiffres ou de caractères spéciaux.</p>
+                        <p id="firstname-error">Veuillez respecter le format requis: pas de chiffres ou de caractères spéciaux ni de champ vide.</p>
                         <label for="signature">Veuillez signer ici:</label>
                         <canvas id="signature"></canvas>
                         <button type="button" id="form-submit">Réservez</button>
